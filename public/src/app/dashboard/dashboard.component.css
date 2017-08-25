@@ -1,0 +1,28 @@
+nav{
+    float: right;
+}
+#nameColumn{
+    width: 80px;
+}
+#questionColumn{
+    width: 250px;
+}
+#dateColumn{
+    width: 150px;
+}
+#actionColumn{
+    width: 70px;
+}
+th{
+    text-align: left;
+}
+div{
+    padding: 10px;
+    width: 500px;
+}
+h2{
+    display: inline;
+}
+table{
+    margin-top: 20px;
+}

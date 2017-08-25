@@ -1,0 +1,15 @@
+<div>
+<form #form='ngForm'>
+  <p>
+    Your Name:
+    <input 
+      type="text" 
+      name="user"
+      required
+      minlength="2"
+      [(ngModel)]="user.name"
+      #name="ngModel">
+  </p>
+  <input [routerLink]="['/dashboard']" [disabled]="!form.valid" (click)="onClick()" type="submit" value="Login" id="button">
+</form>
+</div>

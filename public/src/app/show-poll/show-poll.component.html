@@ -1,0 +1,42 @@
+<div>
+  <h2>{{poll.question}}</h2>
+  <nav>
+    <a [routerLink]="['/dashboard']">Go to Polls</a>
+  </nav>
+
+  <p *ngIf='poll'>Click the vote button to choose one.</p>
+  <p *ngIf='!poll'>No polls have been created.</p>
+
+  <table *ngIf='poll'>
+    <tr>
+      <th id="optionColumn">Option</th>
+      <th id="countColumn">Current Count of Votes</th>
+      <th id="actionColumn">Action</th>
+    </tr>
+    <tr>
+      <td>{{poll.option1.text}}</td>
+      <td>{{poll.option1.votes}}</td>
+      <td><button (click)="voteUp(poll._id, 1)">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{poll.option2.text}}</td>
+      <td>{{poll.option2.votes}}</td>
+      <td><button (click)="voteUp(poll._id, 2)">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{poll.option3.text}}</td>
+      <td>{{poll.option3.votes}}</td>
+      <td><button (click)="voteUp(poll._id, 3)">Vote</button></td>
+    </tr>
+    <tr>
+      <td>{{poll.option4.text}}</td>
+      <td>{{poll.option4.votes}}</td>
+      <td><button (click)="voteUp(poll._id, 4)">Vote</button></td>
+    </tr>
+  </table>
+</div>
+<!-- <div class="testing">
+    <hr>
+    {{ poll | json }}
+    <hr>
+  </div> -->

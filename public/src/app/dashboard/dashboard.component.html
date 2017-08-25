@@ -1,0 +1,25 @@
+<div>
+<h2>Current Polls:</h2>
+<nav>
+  <a [routerLink]="['/create']">Create a New Poll</a>
+  <a [routerLink]="['']">Logout</a>
+</nav>
+<table>
+  <tr>
+    <th id="nameColumn">Name</th>
+    <th id="questionColumn">Survey Question</th>
+    <th id="dateColumn">Date Posted</th>
+    <th id="actionColumn">Action</th>
+  </tr>
+  <tr *ngFor="let question of questions">
+    <td>{{question.name}}</td>
+    <td>
+      <a [routerLink]="['/poll', question._id]">{{question.question}}</a>
+    </td>
+    <td>{{question.createdAt | date:'longDate'}}</td>
+    <td>
+      <a *ngIf="user.name == question.name" [routerLink]="['/dashboard']" (click)="deleteQuestion(question._id)">Delete</a>
+    </td>
+  </tr>
+</table>
+</div>
